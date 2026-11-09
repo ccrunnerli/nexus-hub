@@ -11,7 +11,7 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 | | Where | Notes |
 |---|---|---|
 | **iPhone app** | **[Join the TestFlight beta](https://testflight.apple.com/join/d1G4TSSw)** | Install Apple's free TestFlight app, then open the link on your iPhone. |
-| **Windows** (10 or 11, 64-bit) | **[Latest release](../../releases/latest)** › `NexusGatewaySetup-<version>.exe` | Not code-signed yet; see [Windows warns about the installer](#windows-warns-about-the-installer). |
+| **Windows** (10 or 11, 64-bit) | **[Releases](https://github.com/ccrunnerli/nexus-hub/releases)** › newest › `NexusGatewaySetup-<version>.exe` | Not code-signed yet; see [Windows warns about the installer](#windows-warns-about-the-installer). |
 | **Mac** | Coming soon | |
 
 ## What you can do with it
