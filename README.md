@@ -1,0 +1,77 @@
+# Nexus Hub
+
+**Talk to your own AI agents from your iPhone, by text or voice, from anywhere. Your chats stay on your own computer.**
+
+Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gateway**. The gateway connects the app to AI models you choose: models running on your own computer (LM Studio, Ollama and others), online services you have a key for (Claude, OpenAI, OpenRouter, Groq), and agent servers such as Hermes Agent. Your iPhone reaches the gateway over your private Tailscale network, at home or on mobile data.
+
+> **Beta.** Nexus Hub is in public testing. Expect rough edges, and please report what you find (see [Feedback](#feedback)).
+
+## Download
+
+| | Where | Notes |
+|---|---|---|
+| **iPhone app** | **[Join the TestFlight beta](https://testflight.apple.com/join/d1G4TSSw)** | Install Apple's free TestFlight app, then open the link on your iPhone. |
+| **Windows** (10 or 11, 64-bit) | **[Latest release](../../releases/latest)** › `NexusGatewaySetup-<version>.exe` | Not code-signed yet; see [Windows warns about the installer](#windows-warns-about-the-installer). |
+| **Mac** | Coming soon | |
+
+## What you can do with it
+
+- **Chat with each of your agents** on its own, with threads, search, pinning and archiving.
+- **Talk by voice.** Speak, and hear the reply in a voice you pick for each agent.
+- **Run a team of agents in one room.** In the Hub, mention agents with `@Name` to bring them in; they see each other's replies.
+- **Use local and online models side by side.**
+  - On your computer: LM Studio, Ollama, llama.cpp and vLLM are found automatically.
+  - Online, with your own key: Anthropic (Claude), OpenAI, OpenRouter, Groq, or any OpenAI-compatible service.
+  - Agent servers: Hermes Agent, keeping its own memory and tools. When it wants to run a risky command, it asks you in the chat, and you answer "approve" or "deny" from your phone.
+- **Send photos, text files, PDFs and Word documents.** Under each file you see which agents received it and which have read it.
+- **Keep what matters.** Copy or select any part of a reply, and export a message or a whole thread as text, Markdown or PDF.
+- **Get notified** when a long reply is ready, and lock the app with Face ID.
+- **Try it first.** A demo mode with sample agents works without any computer or setup.
+
+## How it works
+
+```
+iPhone (Nexus Hub)  ──Tailscale, HTTPS──▶  your computer (Nexus Gateway)  ──▶  your AI models
+                                             chats are stored here              local, online, or agent servers
+```
+
+- There is no Nexus Hub account and no Nexus Hub server. The app talks only to the gateway on your computer.
+- Your conversations are saved on that computer.
+- Messages go to an online service only when you connect one with your own key; that service's own privacy policy then applies.
+
+## Get started
+
+1. **On your computer:** download and run the Nexus Gateway installer. When it finishes, a setup guide opens in your browser and walks you through:
+   1. **AI models:** finds LM Studio or Ollama, or connects an online service with your key.
+   2. **Tailscale:** installs it and signs you in (free for personal use).
+   3. **Options:** start Nexus Gateway when you sign in to the computer.
+   4. **Pair iPhone:** shows a QR code, plus the address and token if you'd rather type them.
+
+   The first time, turn on **MagicDNS** and **HTTPS Certificates** in the DNS page of the [Tailscale admin console](https://login.tailscale.com/admin/dns); the guide links there.
+2. **On your iPhone:** install Nexus Hub from TestFlight and install **Tailscale** from the App Store, signed in to the same account.
+3. **Pair:** in Nexus Hub, tap **Scan pairing code** and point it at the QR code on your computer. A connection check tells you if anything is missing.
+4. **Make your first agent** from a model the app lists, or open the setup guide again later from **Settings › Setup**.
+
+The setup page stays available at `http://127.0.0.1:8790` on the computer. Use it to pair another iPhone, make a new pairing code, or add connections.
+
+## Windows warns about the installer
+
+The installer is not code-signed yet, so Windows SmartScreen shows **"Windows protected your PC"**. Click **More info › Run anyway**. Some antivirus programs may also flag or quarantine unsigned builds; if yours does, you can restore the file and add an exception, or wait for a signed release.
+
+To check that your download is the file published here, compare its SHA256 checksum with the one in the release notes. In PowerShell:
+
+```powershell
+Get-FileHash $HOME\Downloads\NexusGatewaySetup-<version>.exe
+```
+
+## Privacy
+
+Read the [privacy policy](PRIVACY.md). In short: no accounts, no analytics, no tracking, and your chats are stored on your own computer.
+
+## Feedback
+
+- **In the app:** long-press any AI reply › **Report this reply**.
+- **Bugs and ideas:** open an issue in this repository.
+- **Email:** support@swiftserviceapp.com
+
+This repository holds the downloads and documentation. The source code is not public.
