@@ -18,12 +18,12 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 
 - **Chat with each of your agents** on its own, with threads, search, pinning and archiving.
 - **Talk by voice.** Speak, and hear the reply in a voice you pick for each agent.
-- **Run a team of agents in one room.** In the Hub, a moderator (Claude, if you've connected it) picks which agent should answer next, based on each agent's role, and stops when your message is handled. Mention agents with `@Name` to ask them first; an agent can hand over to another the same way. Every agent sees the others' replies. Type `/everyone` to have every agent answer once.
-- **Switch Claude's model in the chat.** Type `/model` to see the choices and `/model opus` (for example) to switch; `/model default` goes back.
+- **Run a team of agents in one room.** In the Hub, mention agents with `@Name` to bring them in, or have every agent answer. They answer one after another, and each one sees the replies before it.
 - **Use local and online models side by side.**
   - On your computer: LM Studio, Ollama, llama.cpp and vLLM are found automatically.
   - Online, with your own key: Anthropic (Claude), OpenAI, OpenRouter, Groq, or any OpenAI-compatible service.
   - Agent servers: Hermes Agent, keeping its own memory and tools. When it wants to run a risky command, it asks you in the chat, and you answer "approve" or "deny" from your phone.
+  - Local models are found automatically. Claude, Hermes and other online services are connected once in the setup page, with no coding: **[how to connect Claude and Hermes](CONNECT-CLAUDE-AND-HERMES.md)**.
 - **Send photos, text files, PDFs and Word documents.** Under each file you see which agents received it and which have read it.
 - **Keep what matters.** Copy or select any part of a reply, and export a message or a whole thread as text, Markdown or PDF.
 - **Get notified** when a long reply is ready, and lock the app with Face ID.
@@ -56,13 +56,13 @@ iPhone (Nexus Hub)  ──Tailscale, HTTPS──▶  your computer (Nexus Gatewa
 ```
 
 - There is no Nexus Hub account and no Nexus Hub server. The app talks only to the gateway on your computer.
-- Your conversations are saved on that computer.
+- Your conversations are saved on that computer, and shown in the app on your iPhone.
 - Messages go to an online service only when you connect one with your own key; that service's own privacy policy then applies.
 
 ## Get started
 
 1. **On your computer:** download and run the Nexus Gateway installer. When it finishes, a setup guide opens in your browser and walks you through:
-   1. **AI models:** finds LM Studio or Ollama, or connects an online service with your key.
+   1. **AI models:** finds LM Studio or Ollama, or connects an online service with your key (see [Connect Claude and Hermes](CONNECT-CLAUDE-AND-HERMES.md)).
    2. **Tailscale:** installs it and signs you in (free for personal use).
    3. **Options:** start Nexus Gateway when you sign in to the computer.
    4. **Pair iPhone:** shows a QR code, plus the address and token if you'd rather type them.
