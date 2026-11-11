@@ -14,6 +14,8 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 | **Windows** (10 or 11, 64-bit) | **[Releases](https://github.com/ccrunnerli/nexus-hub/releases)** › newest › `NexusGatewaySetup-<version>.exe` | Not code-signed yet; see [Windows warns about the installer](#windows-warns-about-the-installer). |
 | **Mac** | Coming soon | |
 
+**Languages:** the iPhone app is available in English, Español and Português.
+
 ## What you can do with it
 
 - **Chat with each of your agents** on its own, with threads, search, pinning and archiving.
@@ -28,6 +30,7 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 - **Keep what matters.** Copy or select any part of a reply, and export a message or a whole thread as text, Markdown or PDF.
 - **Get notified** when a long reply is ready, and lock the app with Face ID.
 - **Try it first.** A demo mode with sample agents works without any computer or setup.
+- **Use it in your language.** The app is in English, Spanish (Español) and Brazilian Portuguese (Português). By default it follows your iPhone's language; change it in **Settings › Language**. Your agents reply in whatever language you write to them in. The gateway's setup page on your computer is in English for now.
 
 ## Coming in the next gateway release
 
