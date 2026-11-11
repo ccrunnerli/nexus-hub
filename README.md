@@ -18,7 +18,8 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 
 - **Chat with each of your agents** on its own, with threads, search, pinning and archiving.
 - **Talk by voice.** Speak, and hear the reply in a voice you pick for each agent.
-- **Run a team of agents in one room.** In the Hub, mention agents with `@Name` to bring them in; they see each other's replies.
+- **Run a team of agents in one room.** In the Hub, a moderator (Claude, if you've connected it) picks which agent should answer next, based on each agent's role, and stops when your message is handled. Mention agents with `@Name` to ask them first; an agent can hand over to another the same way. Every agent sees the others' replies. Type `/everyone` to have every agent answer once.
+- **Switch Claude's model in the chat.** Type `/model` to see the choices and `/model opus` (for example) to switch; `/model default` goes back.
 - **Use local and online models side by side.**
   - On your computer: LM Studio, Ollama, llama.cpp and vLLM are found automatically.
   - Online, with your own key: Anthropic (Claude), OpenAI, OpenRouter, Groq, or any OpenAI-compatible service.
@@ -27,6 +28,25 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 - **Keep what matters.** Copy or select any part of a reply, and export a message or a whole thread as text, Markdown or PDF.
 - **Get notified** when a long reply is ready, and lock the app with Face ID.
 - **Try it first.** A demo mode with sample agents works without any computer or setup.
+
+## Coming in the next gateway release
+
+These are built and in testing. The iPhone app already has them, but they need a Nexus Gateway newer than 0.4.3, which is not published yet.
+
+- **Long-term memory.** Agents keep short notes across conversations: facts about you, your preferences and ongoing work.
+  - In an agent's chat: `/remember <note>` saves one, `/memory` lists them, `/forget 3` or `/forget all` removes them.
+  - Agents can also save notes themselves. Claude does it with a real memory tool.
+  - On the **Agents** tab, **Memory** shows each agent's notes, and you can add or delete them.
+  - Notes are stored on your computer. They are sent only to that agent's own model, with your messages, so an online agent such as Claude receives them too.
+- **Web search.**
+  - Claude can search the web with Anthropic's built-in search, and lists its sources at the end of the reply.
+  - Local models can search through your own [SearXNG](https://docs.searxng.org/) server, so searches stay private and free.
+  - A "🔎 Searching" line shows what the agent looked up.
+- **Agent profiles.** Give an agent a written identity: who it is, what it's good at, its limits, and which teammate to send work to.
+- **Approve or deny with a tap.** When Hermes Agent asks permission to run a command, **Approve** and **Deny** buttons appear in the chat.
+- **Know what Claude costs.** Type `/usage` in a chat to see this month's estimated Claude spending, by model, including web searches and the share used by memory. Your actual bill is in the Anthropic Console.
+
+In this first version, memory, web search and agent profiles are switched on for each agent in the gateway's settings file. The release notes will explain how.
 
 ## How it works
 
