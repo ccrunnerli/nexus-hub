@@ -11,6 +11,7 @@ Nexus Hub is an iPhone app plus a small program for your computer, **Nexus Gatew
 | | Where | Notes |
 |---|---|---|
 | **iPhone app** | **[Join the TestFlight beta](https://testflight.apple.com/join/d1G4TSSw)** | Install Apple's free TestFlight app, then open the link on your iPhone. |
+| **Android app** (preview) | **[Download the APK](https://github.com/ccrunnerli/nexus-hub/releases/tag/android-v0.3.0-rc1)** › `nexus-hub-0.3.0-rc1.apk` | Android 7.0 or later. Not on Google Play: open the link on your Android phone, download the APK, open it, and allow your browser to install apps if Android asks. First preview, not yet tested on a real Android device. Install steps and the SHA-256 checksum are in the release notes. |
 | **Windows** (10 or 11, 64-bit) | **[Releases](https://github.com/ccrunnerli/nexus-hub/releases)** › newest › `NexusGatewaySetup-<version>.exe` | Not code-signed yet; see [Windows warns about the installer](#windows-warns-about-the-installer). |
 | **Mac** | Coming soon | |
 
@@ -72,6 +73,8 @@ iPhone (Nexus Hub)  ──Tailscale, HTTPS──▶  your computer (Nexus Gatewa
 
    The first time, turn on **MagicDNS** and **HTTPS Certificates** in the DNS page of the [Tailscale admin console](https://login.tailscale.com/admin/dns); the guide links there.
 2. **On your iPhone:** install Nexus Hub from TestFlight and install **Tailscale** from the App Store, signed in to the same account.
+
+   **On an Android phone (preview):** install the [Nexus Hub APK](https://github.com/ccrunnerli/nexus-hub/releases/tag/android-v0.3.0-rc1) and **Tailscale** from Google Play, signed in to the same account.
 3. **Pair:** in Nexus Hub, tap **Scan pairing code** and point it at the QR code on your computer. A connection check tells you if anything is missing.
 4. **Make your first agent** from a model the app lists, or open the setup guide again later from **Settings › Setup**.
 
